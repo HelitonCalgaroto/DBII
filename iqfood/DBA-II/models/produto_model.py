@@ -3,7 +3,7 @@ from sqlalchemy.orm import relationship
 from core.configs import settings
 
 class ProdutoModel(settings.DBBaseModel):
-   __tablename__ = 'produtos'
+   __tablename__ = 'produto'
 
    id = Column(Integer, primary_key=True, autoincrement=True)
    nome = Column(String(150), nullable=True)
@@ -12,7 +12,7 @@ class ProdutoModel(settings.DBBaseModel):
    fracionado = Column(Boolean, default=False)
    avaliacao = Column(SmallInteger, default=5)
    tamanho = Column(String(20))
-   restaurante_id = Column(Integer, ForeignKey("restaurantes.id"))
+   restaurante_id = Column(Integer, ForeignKey("restaurante.id"))
    categoria_id = Column(Integer, ForeignKey('categoria.id'))
 
    restaurante = relationship("Restaurante", back_populates="produtos")

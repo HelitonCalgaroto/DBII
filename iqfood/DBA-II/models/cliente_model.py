@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String
 from core.configs import settings
 
 class ClienteModel(settings.DBBaseModel):
-    __tablename__ = "clientes"
+    __tablename__ = "cliente"
 
     id = Column(Integer, primary_key=True, index=True)
     nome = Column(String(100), index=True)

@@ -3,11 +3,11 @@ from sqlalchemy.orm import relationship
 from core.configs import settings
 
 pedido_produtos_composicoes_associacao = Table('pedido_produtos_composicoes', settings.DBBaseModel.metadata,
-                                                Column('pedido_produtos_id', Integer, ForeignKey('pedido_produtos.id')),
+                                                Column('pedido_produto_id', Integer, ForeignKey('pedido_produto.id')),
                                                 Column('composicao_id', Integer, ForeignKey('composicao.id')))
 
 class PedidoProdutosComposicaoModel(settings.DBBaseModel):
-    __tablename__ = 'pedido_produtos'
+    __tablename__ = 'pedido_produto'
 
     id = Column(Integer, primary_key=True, index=True)
     produto_id = Column(Integer, ForeignKey('produto.id'))

@@ -9,5 +9,5 @@ class ProdutoFotosModel(settings.DBBaseModel):
    url = Column(String(100))
    descricao = Column(String(30))
    data = Column(TIMESTAMP)
-   produto_id = Column(Integer, ForeignKey('produtos.id'))
+   produto_id = Column(Integer, ForeignKey('produto.id'))
    produto = relationship("Produto", back_populates="fotos")

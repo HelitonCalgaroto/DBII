@@ -3,10 +3,10 @@ from sqlalchemy.orm import relationship
 from core.configs import settings
 
 class EnderecoModel(settings.DBBaseModel):
-    __tablename__ = "enderecos"
+    __tablename__ = "endereco"
 
     id = Column(Integer, primary_key=True, index=True)
-    cliente_id = Column(Integer, ForeignKey("clientes.id"))
+    cliente_id = Column(Integer, ForeignKey("cliente.id"))
     rua = Column(String(100))
     numero = Column(String(10))
     bairro = Column(String(50))
